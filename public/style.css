@@ -1,0 +1,65 @@
+#fp-nav,
+.fp-watermark {
+    display: none !important;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+    direction: rtl;
+}
+
+main {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+section {
+    scroll-snap-align: start;
+    height: 100vh;
+}
+
+/* Global CSS for scrollbar styling */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2c2c2c;
+    /* Dark background */
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    /* Gray thumb */
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
+    /* Lighter gray when hovered */
+}
+
+.nodrag {
+    -webkit-user-drag: none;
+    /* Chrome, Safari */
+    user-drag: none;
+    /* Future-proof */
+    -webkit-user-select: none;
+    /* Prevent text/image selection */
+    user-select: none;
+}
+
+.nodrag * {
+    -webkit-user-drag: none;
+    /* Chrome, Safari */
+    user-drag: none;
+    /* Future-proof */
+    -webkit-user-select: none;
+    /* Prevent text/image selection */
+    user-select: none;
+}
