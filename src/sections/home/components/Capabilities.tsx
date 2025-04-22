@@ -105,7 +105,7 @@ export function HomeCapabilities() {
                                 viewport={{ once: true }}
                                 sx={{
                                     minWidth: 300,
-                                    height: 300,
+                                    height: 220,
                                     p: 2,
                                     boxShadow: 3,
                                 }}
