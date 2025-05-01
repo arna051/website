@@ -59,7 +59,7 @@ export function HomeCapabilities() {
                 {/* Background image */}
                 <Box
                     component="img"
-                    src="/projects/coffe.jpg"
+                    src="/hippo-yellow.png"
                     alt="بنر هیپوگریف"
                     sx={{
                         position: "absolute",
@@ -67,7 +67,7 @@ export function HomeCapabilities() {
                         objectFit: "cover",
                         width: "100%",
                         height: "100%",
-                        opacity: 0.1,
+                        opacity: 0.25,
                     }}
                 />
 
@@ -85,12 +85,12 @@ export function HomeCapabilities() {
                         </Typography>
 
                         <Typography
-                            variant="body1"
+                            variant="caption"
                             color="text.secondary"
                             maxWidth="md"
                             mx="auto"
                         >
-                            ما تیمی از مهندسان نرم‌افزار و سخت‌افزار هستیم که تخصص ما در توسعه‌ی سامانه‌های سفارشی و پیچیده است. از طراحی بردهای نهفته تا اپلیکیشن‌های فول‌استک، توانایی هماهنگ‌سازی سیستم‌های نرم‌افزاری و سخت‌افزاری را در سطوح مختلف داریم.
+                            ما تیمی متخصص در مهندسی نرم‌افزار و سخت‌افزار هستیم و در توسعه سامانه‌های سفارشی، از طراحی بردهای نهفته تا اپلیکیشن‌های فول‌استک، مهارت داریم.
                         </Typography>
                     </Stack>
                 </Stack>

@@ -9,6 +9,30 @@ import { useMemo } from "react";
 
 const projects = [
     {
+        title: "دستگاه تمام اتومات قهوه‌ساز",
+        type: "پروژه‌ی سخت‌افزاری / رباتیک",
+        url: "",
+        image: "/projects/coffee.png"
+    },
+    {
+        title: "سامانه مودیان الیاتی",
+        type: "نرم‌افزار حسابداری (ویندوز)",
+        url: "https://github.com/arna051/side/releases/download/v1.1.7/Side-Setup-1.1.7.exe",
+        image: "/projects/tax.png"
+    },
+    {
+        title: "پالس لاواژ",
+        type: "دستگاه مخصوص اتاق عمل",
+        url: "",
+        image: "/projects/pulse.png"
+    },
+    {
+        title: "ربات ترید کریپتو",
+        type: "ربات ترید در فیچرز با وین ریت 76.5٪",
+        url: "",
+        image: "/projects/bot.png"
+    },
+    {
         title: "امگاطب",
         type: "فروشگاه اینترنتی تجهیزات پزشکی",
         url: "https://omegateb.com/home/",
@@ -21,29 +45,23 @@ const projects = [
         image: "/projects/shoe.jpg"
     },
     {
-        title: "طب احمدی",
-        type: "فروشگاه اینترنتی تجهیزات پزشکی",
-        url: "https://ahmdi.ir/",
-        image: "/projects/404.png"
-    },
-    {
-        title: "سامانه مودیان الیاتی",
-        type: "نرم‌افزار حسابداری (ویندوز)",
-        url: "https://github.com/arna051/side/releases/download/v1.1.7/Side-Setup-1.1.7.exe",
-        image: "/projects/tax.jpg"
-    },
-    {
         title: "جوانان احمد الحسن",
         type: "آکادمی و سامانه‌ی داده‌محور",
         url: "https://ahmedalhasan.com",
         image: "/projects/youth.jpg"
     },
     {
-        title: "دستگاه تمام اتومات قهوه‌ساز",
-        type: "پروژه‌ی سخت‌افزاری / رباتیک",
+        title: "طب احمدی",
+        type: "فروشگاه اینترنتی تجهیزات پزشکی",
+        url: "https://ahmdi.ir/",
+        image: "/projects/teb.png"
+    },
+    {
+        title: "اتوماسیون خانه",
+        type: "اتوماسیون خانه/ دفتر/ اداره با بکار گیری سیستم های نهفته و اینترنت اشیاء",
         url: "",
-        image: "/projects/coffe.jpg"
-    }
+        image: "/projects/auto.png"
+    },
 ];
 
 
@@ -55,7 +73,7 @@ export function HomeProjects() {
             <Box component="div" id="projects" />
             <Box
                 component="img"
-                src="/hippogriff.jpeg"
+                src="/hippo-white.png"
                 alt="بنر هیپوگریف"
                 sx={{
                     position: "absolute",
@@ -63,7 +81,7 @@ export function HomeProjects() {
                     objectFit: "cover",
                     width: "100%",
                     height: "100%",
-                    opacity: 0.1,
+                    opacity: 0.25,
                 }}
             />
             <Stack justifyContent="center" alignItems="center" sx={{ height: '100%', maxWidth: '99vw', overflow: 'hidden' }}>
@@ -108,7 +126,8 @@ export function HomeProjects() {
                                     height: 250,
                                     p: 2,
                                     boxShadow: 3,
-                                    position: 'relative'
+                                    position: 'relative',
+                                    zIndex: -1
                                 }}
                             >
                                 <Box
@@ -121,10 +140,11 @@ export function HomeProjects() {
                                         objectFit: "cover",
                                         width: "100%",
                                         height: "100%",
-                                        opacity: 0.1,
+                                        opacity: 0.35,
+                                        zIndex: -1
                                     }}
                                 />
-                                <CardContent>
+                                <CardContent sx={{ zIndex: 1 }}>
                                     <Stack gap={.5}>
                                         <Typography variant="h6" fontWeight="bold">
                                             {cap.title}
@@ -141,7 +161,8 @@ export function HomeProjects() {
                                         right: 0,
                                         bottom: 0,
                                         m: 'auto',
-                                        py: 2
+                                        py: 2,
+                                        zIndex: 20
                                     }}
                                 >
                                     {

@@ -22,10 +22,29 @@ const contacts = [
     }
 ];
 
+const sx = {
+    width: 75,
+    height: 75,
+}
+
 export function ContactUs() {
     return (
-        <Section sx={{ py: { xs: 6, md: 12 } }}>
-
+        <Section sx={{ py: { xs: 6, md: 12 }, position: 'relative', overflow: 'hidden' }}>
+            {/* Background image */}
+            <Box
+                component="img"
+                src="/hippo-storm.png"
+                alt="بنر هیپوگریف"
+                sx={{
+                    position: "absolute",
+                    inset: 0,
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%",
+                    opacity: 0.2,
+                    transform: "scale(1.05)",
+                }}
+            />
             <Box component="div" id="contact-us" />
             <Stack justifyContent="center" alignItems="center" sx={{ height: '100%', maxWidth: '99vw', overflow: 'hidden' }}>
 
@@ -50,7 +69,7 @@ export function ContactUs() {
 
 
                 <Box>
-                    <Swap >
+                    <Swap>
 
                         {contacts.map((contact, index) => (
                             <motion.div
@@ -60,44 +79,27 @@ export function ContactUs() {
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.2, duration: 0.5 }}
                             >
-                                <Card sx={{ minWidth: 250, height: 300, position: 'relative', overflow: 'visible', mt: 8 }}>
-                                    <Avatar
-                                        src={contact.image}
-                                        alt={contact.name}
-                                        sx={{
-                                            width: 150,
-                                            height: 150,
-                                            position: 'absolute',
-                                            left: 0,
-                                            right: 0,
-                                            top: 0,
-                                            transform: 'translateY(-40%)',
-                                            mx: 'auto'
-                                        }}
-                                    />
-                                    <CardContent sx={{ pt: 14 }}>
-                                        <Stack spacing={1} alignItems="center" textAlign="center">
-
-                                            <Typography variant="subtitle1" fontWeight="bold">
-                                                {contact.name}
-                                            </Typography>
-                                            <Chip label={contact.type} color="warning" size="small" />
-                                            <Typography variant="h6" component="span" color="success.main" sx={{
-                                                display: 'block',
-                                                py: 2
-                                            }}>
-                                                {contact.phone}
-                                            </Typography>
-                                            <Button
-                                                href={contact.telLink}
-                                                variant="outlined"
-                                                size="small"
-                                                sx={{ mt: 1, borderRadius: 2 }}
-                                            >
-                                                تماس بگیرید
-                                            </Button>
-                                        </Stack>
-                                    </CardContent>
+                                <Card sx={theme => ({
+                                    border: `2px solid ${theme.palette.primary.main}`
+                                })}>
+                                    <Stack direction="row">
+                                        <Avatar
+                                            src={contact.image}
+                                            alt={contact.name}
+                                            sx={theme => ({
+                                                ...sx,
+                                                borderLeft: `2px solid ${theme.palette.primary.main}`
+                                            })}
+                                            variant="square"
+                                        />
+                                        <CardContent sx={{ flex: '1 1 auto', m: 0 }}>
+                                            <Typography variant="body1" fontWeight="bold">{contact.name}</Typography>
+                                            <Typography variant="caption">{contact.phone}</Typography>
+                                        </CardContent>
+                                        <Button variant="contained" sx={sx}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.778 11.942C2.83 10.29 2.372 8.94 2.096 7.572c-.408-2.024.526-4.001 2.073-5.263c.654-.533 1.404-.35 1.791.343l.873 1.567c.692 1.242 1.038 1.862.97 2.52c-.069.659-.536 1.195-1.469 2.267zm0 0c1.919 3.346 4.93 6.36 8.28 8.28m0 0c1.653.948 3.002 1.406 4.37 1.682c2.024.408 4.001-.526 5.262-2.073c.534-.654.351-1.404-.342-1.791l-1.567-.873c-1.242-.692-1.862-1.038-2.52-.97c-.659.069-1.195.536-2.267 1.469zm7.715-15.995L13 11m6.773-6.773c-.505-.505-2.888-.01-3.608 0m3.608 0c.505.505.01 2.888 0 3.608" color="currentColor"></path></svg>
+                                        </Button>
+                                    </Stack>
                                 </Card>
                             </motion.div>
                         ))}

@@ -11,7 +11,7 @@ import {
 } from "framer-motion"
 import { ReactNode, useRef } from "react"
 
-export default function Swap({ children }: { children: ReactNode }) {
+export default function Swap({ children, height = 300 }: { children: ReactNode, height?: number }) {
     const ref = useRef<HTMLDivElement>(null)
     const { scrollXProgress } = useScroll({ container: ref })
     const maskImage = useScrollOverflowMask(scrollXProgress)
@@ -56,6 +56,7 @@ export default function Swap({ children }: { children: ReactNode }) {
             ref={ref}
             style={{ maskImage } as any}
             sx={{
+                height,
                 maxWidth: '100vw',
                 overflowX: 'auto',
                 scrollSnapType: 'x',
