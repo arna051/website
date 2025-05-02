@@ -94,18 +94,18 @@ export function HomeProjects() {
                         <Typography
                             variant="h4"
                             fontWeight="bold"
-                            mb={2}
+                            mb={1}
                         >
                             پروژه‌های ما
                         </Typography>
 
                         <Typography
-                            variant="body1"
+                            variant="caption"
                             color="text.secondary"
                             maxWidth="md"
                             mx="auto"
                         >
-                            برخی از پروژه‌های نرم‌افزاری و سخت‌افزاری که با افتخار توسعه داده‌ایم — از فروشگاه‌های اینترنتی گرفته تا سامانه‌های حسابداری و دستگاه‌های هوشمند.
+                            برخی از پروژه‌های ما شامل فروشگاه‌های اینترنتی، سامانه‌های حسابداری و دستگاه‌های هوشمند است.
                         </Typography>
                     </Stack>
                 </Stack>
